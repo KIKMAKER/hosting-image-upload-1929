@@ -1,5 +1,10 @@
 <%= link_to '<-', root_path  %>
 <div class="container my-4">
+
+<% if @post.photo.attached? %>
+  <%= cl_image_tag @post.photo.key, width: 400, height: 300, crop: :fill  %>
+<% end %>
+
   <h1 class="my-3"><%= @post.title %></h1>
   <p><%= @post.content %></p>
 
