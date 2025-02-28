@@ -1,0 +1,15 @@
+<div class="container my-4">
+  <div class="d-flex">
+    <h1>Everything I wrote...</h1>
+    <%= link_to "+", new_post_path, class:"btn btn-primary" %>
+  </div>
+
+
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do  %>
+      <div class="card w-50 p-3 my-3">
+        <h3><%= post.title %></h3>
+      </div>
+    <% end %>
+  <% end %>
+</div>
